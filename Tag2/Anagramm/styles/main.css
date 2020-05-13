@@ -1,0 +1,33 @@
+html{
+  background: orange;
+ font-family: Helvetica;
+}
+.raster div{
+  justify-content: center;
+  align-content: center;
+}
+.raster {
+  display: grid;
+  width: 600px;
+  grid-template-columns: 200px 200px 200px);
+  grid-template-rows: 200px 200px;
+  grid-auto-flow: column;
+  text-align: center;
+  align-items: center;
+}
+
+/*https://www.w3schools.com/css/css3_mediaqueries.asp */
+@media screen and (max-width: 48em){
+html{
+background: black;
+color: white;
+}
+.raster .I {
+  grid-area: 1/3/2/4;
+}
+.raster .L{
+  grid-area: 2/1/3/2;
+}
+
+
+}
