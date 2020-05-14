@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Animation Here</title>
+<link href="https://fonts.googleapis.com/css?family=Bevan&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="./styles/main.css"> -->
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  background-color: #6C13DD;
+  display: inline-grid;
+  align-items: center;
+  justify-items: center;
+  transition: all 5s ease;
+}
+.container :first-child{
+  transition: all 2s ease;
+}
+.container :last-child:hover{
+  transition: all 3s ease;
+}
+
+ p{
+  font-family: 'Bevan', cursive;
+  font-size: 50px;
+  line-height: 100%;
+  color: white;
+}
+
+
+.container:hover{
+  background-color: #DD1313;
+}
+
+.container :first-child:hover{
+  transform: scale(2)
+}
+.container :last-child:hover{
+  transform: scale(4)translateX(100px);
+}
+
+
+
+
+
+</style>
+
+<body>
+
+  <div class="container">
+    <p>Right</p>
+    <p>here</p>
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
