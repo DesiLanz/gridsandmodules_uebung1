@@ -1,0 +1,64 @@
+body{
+  background-color: #08011E;
+  font-family: Rockwell;
+}
+
+/* Schriften */
+h1{
+  font-size: 13em;
+  color:white;
+
+}
+h2{
+  font-size: 8em;
+  color:white;
+}
+h3{
+  font-size: 3em;
+  color:white;
+}
+p{
+  font-size: 2em;
+  color:white;
+}
+.sullivan{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 3em;
+  width: 60%;
+  color: white;
+  justify-self:center;
+}
+
+
+/* Boxen */
+
+.typewriter{
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  display: inline-grid;
+}
+.typewriter .sullivan {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: normal; /* Keeps the content on a single line  */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 6s steps(30, end),
+    blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
