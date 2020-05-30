@@ -27,15 +27,31 @@ p{
   font-size: 3em;
   width: 60%;
   color: white;
+  text-align: left;
   justify-self:center;
 }
-
+.klatschen{
+font-style: italic;
+font-weight: normal;
+font-size: 2em;
+letter-spacing: 0.7;
+color:white;
+opacity: .08;
+}
+.smoking{
+  font-weight: bold;
+  font-size: 3em;
+  color:white;
+  text-align: center;
+  align-items: end;
+  justify-self: center;
+}
 
 /* Boxen */
 
 .typewriter{
   width: 100vw;
-  height: 100vh;
+  height:900px;
   justify-content: center;
   align-content: center;
   display: inline-grid;
@@ -43,22 +59,125 @@ p{
 .typewriter .sullivan {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: normal; /* Keeps the content on a single line  */
+  white-space: nowrap; /* Keeps the content on a single line  */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation:
-    typing 6s steps(30, end),
-    blink-caret 1s step-end infinite;
+
+}
+.typewriter .sullivan:nth-child(1) {
+  width: 12em;
+  animation: type 2s steps(40, end);
+  animation-fill-mode: forwards;
+}
+.typewriter .sullivan:nth-child(2) {
+  width: 14em;
+  opacity: 0;
+  animation: type2 3s steps(40, end);
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+.typewriter .sullivan:nth-child(3) {
+  width: 11em;
+  opacity: 0;
+  animation: type3 2s steps(40, end);
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+.typewriter .sullivan:nth-child(4) {
+  width: 12.8em;
+  opacity: 0;
+  animation: type4 2s steps(40, end);
+  animation-delay: 7s;
+  animation-fill-mode: forwards;
+}
+.typewriter .sullivan:nth-child(5) {
+  width: 10.6em;
+  opacity: 0;
+  animation: type5 3s steps(40, end), blink .5s step-end infinite alternate;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }}
+@keyframes type2{
+  0% {
+    width: 0;}
+  1% {
+    opacity: 1;}
+  99.9% {
+    border-right: .15em solid orange;}
+  100% {
+    opacity: 1; border: none;}
+}
+@keyframes type3{
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+@keyframes type4{
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+@keyframes type5 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+.raster{
+  width: 100vw;
+  height: 900px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.clap{
+  grid-area: 1/1/2/3;
+}
+.smoke{
+  grid-area: 1/1/2/3;
+  z-index: 1;
+  align-items: end;
+  display: inline-grid;
+
 }

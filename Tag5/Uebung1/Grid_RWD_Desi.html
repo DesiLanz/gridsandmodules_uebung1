@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Grid Responsive</title>
+    <style>
+
+      body {
+        font-family: Rockwell;
+        height:100vh;
+        margin: auto;
+        display: grid;
+        grid-template-areas:
+                ". ."
+                "Versalie Want"
+                ". footer";
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-gap:50px;
+        padding:10px;
+        background-color: #08011E;
+    }
+    Versalie {
+      grid-area:Versalie;
+      font-weight: bold;
+      font-size: 500px;
+      text-shadow: 21px 13px 0px #F11818;
+      color: #F98D2D;
+      justify-self: right;
+      margin-top:-2%;
+    }
+    Want{
+      grid-area: Want;
+      font-weight: bold;
+      font-size: 75px;
+      text-shadow: 6px 3px 0px #F11818;
+      color: #F98D2D;
+    }
+    footer{
+      grid-area: footer;
+      font-weight: bold;
+      font-size: 75px;
+      text-shadow: 6px 3px 0px #F11818;
+      color: #F98D2D;
+    }
+
+    @media screen and (max-width: 50em) {
+      body {
+        grid-template-areas:
+                "Versalie Want"
+                "footer footer";
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 2fr 1fr;
+        grid-gap:30px;
+        padding:10px;
+      }
+
+      Want{
+        font-size: 60px;
+        writing-mode: vertical-rl;
+        justify-self: left;
+        margin-top:5%;
+      }
+      footer{
+        font-size: 60px;
+        align-self: center;
+      }
+    }
+
+    @media screen and (max-width: 40em) {
+      body {
+        grid-template-areas:
+                "Versalie"
+                "Want"
+                "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 1fr;
+        grid-gap:10px;
+        margin: auto;
+      }
+      Versalie{
+        font-size: 300px;
+        justify-self: center;
+        align-self:end;
+
+
+      }
+      Want{
+        font-size: 35px;
+        writing-mode: horizontal-tb;
+        justify-self: center;
+      }
+      footer{
+        font-size: 35px;
+          align-self: end;
+          justify-self:end;
+          padding-bottom:5%;
+      }
+    }
+
+  </style>
+</head>
+<Versalie>I</Versalie>
+<Want>want to dance.<br>
+want to win. <br>
+want that trophy.</Want>
+<footer>So, dance good.</footer>
+
+  <body>
+
+  </body>
+  </html>
