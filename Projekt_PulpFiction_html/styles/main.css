@@ -11,8 +11,8 @@ h1{
   text-shadow: 18px 9px 0px #F11818;
 }
 .Gross{
-  font-size: 25em;
-  text-align: 80%;
+  font-size: 34em;
+  line-height: 10%;
 }
 
 h2{
@@ -48,7 +48,11 @@ p{
   color: #F98D2D;
   text-shadow: 5px 4px 0px #F11818;
   }
-
+  .Vincent{
+    font-size: 5em;
+    font-weight: bold;
+    /* color: #F11818; */
+    }
 
 .sullivan{
   font-style: italic;
@@ -65,8 +69,9 @@ p{
   font-size: 2em;
   letter-spacing: 0.7;
   color:white;
-  opacity: .08;
+
   }
+
 .smoking{
   font-weight: bold;
   font-size: 3em;
@@ -74,13 +79,23 @@ p{
   text-align: center;
   align-items: end;
   justify-self: center;
+  opacity: 0.7;
 }
 
+.kleingeschriebenes{
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+}
 /* Boxen */
+.Space{
+  width: 100vw;
+  height: 400px;
+}
 
 .typewriter{
   width: 100vw;
-  height:900px;
+  min-height: 100vh;
   justify-content: center;
   align-content: center;
   display: inline-grid;
@@ -92,36 +107,36 @@ p{
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 
 }
-.typewriter .sullivan:nth-child(1) {
+.typewriter.isinview .sullivan:nth-child(1) {
   width: 12em;
   animation: type 2s steps(40, end);
   animation-fill-mode: forwards;
 }
-.typewriter .sullivan:nth-child(2) {
+.typewriter.isinview .sullivan:nth-child(2) {
   width: 14em;
   opacity: 0;
   animation: type2 3s steps(40, end);
   animation-delay: 2s;
   animation-fill-mode: forwards;
 }
-.typewriter .sullivan:nth-child(3) {
+.typewriter.isinview .sullivan:nth-child(3) {
   width: 11em;
   opacity: 0;
   animation: type3 2s steps(40, end);
   animation-delay: 5s;
   animation-fill-mode: forwards;
 }
-.typewriter .sullivan:nth-child(4) {
+.typewriter.isinview .sullivan:nth-child(4) {
   width: 12.8em;
   opacity: 0;
   animation: type4 2s steps(40, end);
   animation-delay: 7s;
   animation-fill-mode: forwards;
 }
-.typewriter .sullivan:nth-child(5) {
+.typewriter.isinview .sullivan:nth-child(5) {
   width: 10.6em;
   opacity: 0;
-  animation: type5 3s steps(40, end), blink .5s step-end infinite alternate;
+  animation: type5 2s steps(40, end), blink .5s step-end infinite alternate;
   animation-delay: 9s;
   animation-fill-mode: forwards;
 }
@@ -195,34 +210,64 @@ p{
 
 .raster{
   width: 100vw;
-  height: 900px;
+  min-height: 100vh;
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
+
 .clap{
   grid-area: 1/1/2/3;
 }
+.clap.isinview{
+  animation-name: clapping;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes clapping {
+  0%{ opacity: 0;}
+  25%{ opacity: 0.03;}
+  50%{opacity: 0.07;}
+  75%{opacity: 0.03}
+  100%{opacity: 0;}
+}
+
 .smoke{
   grid-area: 1/1/2/3;
   z-index: 1;
   align-items: end;
   display: inline-grid;
+}
+.smoke.isinview{
+  transition-delay: 0.5s;
+  transition: all 15s ease;
+  opacity: 0;
+  font-size: 8em;
+  transform:translateY(-100vh);
 
 }
 
 .Grid12er{
 display: grid;
-height: 900px;
+min-height: 100vh;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  grid-template-rows: 3fr 2fr;
  grid-column-gap: 3%;
 }
 .Grid12er2{
 display: grid;
-height: 900px;
+min-height: 100vh;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
- grid-template-rows: 1fr 4fr 1fr;
+ grid-template-rows: 15vh 2fr 1fr;
+ grid-column-gap: 3%;
+}
+
+.einfacher12er{
+display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: auto;
  grid-column-gap: 3%;
 }
 
@@ -233,6 +278,23 @@ height: 900px;
 .b3{
   grid-area: 2/5/3/13;
 }
+.b3.isinview{
+  opacity: 0;
+  animation-name: einblenden;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes einblenden {
+  0%{ transform: translateX(-20vw);
+   }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .Right{
   grid-area: 1/1/3/13;
@@ -240,13 +302,41 @@ height: 900px;
   justify-self: center;
   z-index: 1;
 }
+.Right.isinview{
+  animation-name: vergrössern;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes vergrössern {
+  0%{}
+    50%{ transform: scale(1.2);}
+    100%{}
+  }
 .Subline {
   grid-area: 2/8/3/12;
   justify-self:center;
   margin-top: -5%;
 }
+.Subline.isinview{
+  opacity: 0;
+  animation-name: plopp;
+  animation-delay: 3.5s;
+  animation-duration:.2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes plopp {
+  0%{  }
+  100%{
+    opacity: 1;  }
+}
 
 .Test{
+  height: 100vh;
   overflow:hidden;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -269,7 +359,6 @@ height: 900px;
   animation-direction: alternate;
   animation-timing-function: linear;
 }
-
         @keyframes bewegen_left {
             0% {
                 transform: translate(10vw, 0.6vh);
@@ -305,11 +394,46 @@ height: 900px;
             }
         }
 
+
 .noRechts{
-  grid-area:  1/3/2/13;
+  grid-area:  1/1/2/13;
+}
+.noRechts.isinview{
+  animation-name: durchfahren;
+  animation-delay: 1s;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes durchfahren {
+  0%{transform: translateX(-50vw)}
+  100% {
+    transform: translateX(100vw);
+  }
 }
 .untenLinks{
-  grid-area:  2/2/3/8;
+  grid-area:  1/2/3/12;
+  z-index: 1;
+  display: inline-grid;
+  justify-self: left;
+  align-self: end;
+}
+.untenLinks.isinview{
+  animation-name: aufblasen;
+  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes aufblasen {
+  0%{opacity: 0}
+  100%{
+    transform-origin: 0% 100%;
+    opacity: 1;
+    transform: scale(2);
+  }
 }
 
 .Zentriert{
@@ -318,16 +442,56 @@ height: 900px;
   justify-self: center;
   align-self: center;
 }
+.Zentriert.isinview{
+transition: all 10s ease;
+transition-delay: 2s;
+transform: scale(12);
+opacity: 0;
+}
 
+.ZentriertOben{
+  grid-area:  1/1/3/13;
+  display: inline-grid;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+.ZentriertUnten{
+  grid-area:  1/1/3/13;
+  display: inline-grid;
+  justify-self: center;
+  align-self: center;
+  padding-top:0.4%;
+  padding-left:0.5%;
+}
 .Ich{
   grid-area:  2/2/3/5;
   justify-self: center;
-  align-self: top;
-
+  align-self: start;
 }
 .Want{
   grid-area:  2/5/3/12;
 }
 .danceGood{
   grid-area:  3/5/4/12;
+}
+
+.a{
+  grid-area:  1/2/2/9;
+  margin-top: 20%;
+}
+.b{
+  grid-area:  2/9/3/13;
+  writing-mode: sideways-lr;
+}
+.c{
+  grid-area:  3/2/4/9;
+}
+.d{
+  grid-area:  4/2/5/6;
+  writing-mode: sideways-lr;
+  margin-top: 40%;
+}
+.e{
+  grid-area:  5/6/6/13;
 }
