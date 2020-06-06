@@ -66,7 +66,6 @@ p{
   font-style: italic;
   font-weight: bold;
   font-size: 3em;
-  width: 60%;
   color: white;
   text-align: left;
   justify-self:center;
@@ -298,7 +297,7 @@ display: grid;
   opacity: 0;
   animation-name: einblenden;
   animation-delay: 1s;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: both;
   animation-direction: normal;
   animation-timing-function: linear;
@@ -337,7 +336,6 @@ display: grid;
   margin-top: -5%;
 }
 .Subline.isinview{
-  opacity: 0;
   animation-name: plopp;
   animation-delay: 3.5s;
   animation-duration:.2s;
@@ -346,7 +344,7 @@ display: grid;
   animation-timing-function: linear;
 }
 @keyframes plopp {
-  0%{  }
+  0%{ opacity: 0; }
   100%{
     opacity: 1;  }
 }
@@ -459,7 +457,7 @@ display: grid;
   align-self: center;
 }
 .Zentriert.isinview{
-transition: all 10s ease;
+transition: all 2.5s ease;
 transition-delay: 2s;
 transform: scale(12);
 opacity: 0;
@@ -523,35 +521,49 @@ opacity: 0;
 }
 .Ich.isinview{
   animation-name: first;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
+  animation-iteration-count: 3;
 }
 @keyframes first {
   0%{opacity: 0;}
-  50%{opacity: 1; transform: scale(1.5);}
+  40%{opacity: 1; transform: scale(1.5);}
   100%{opacity: 1;}
 }
 
 .Rechtsuntereinander.isinview :nth-child(1){
-animation-name: plopp;
-animation-duration: .5s;
-animation-delay: 1.8s;
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 .Rechtsuntereinander.isinview :nth-child(2){
-animation-name: plopp;
-animation-duration: .5s;
-animation-delay: 2.3s;
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 .Rechtsuntereinander.isinview :nth-child(3){
-animation-name: plopp;
-animation-duration: .5s;
-animation-delay: 2.8s;
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 .Rechtsuntereinander.isinview :nth-child(4){
-animation-name: plopp;
-animation-duration: .5s;
-animation-delay: 3.2s;
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: .2s;
+  animation-delay:7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 
@@ -588,17 +600,32 @@ animation-delay: 3.2s;
   100% { transform: translateX(20vw);opacity: 0;}
 }
 .Mia1{
-    grid-area:  3/2/4/13;
+  padding-top:400px;
+  grid-area:  3/2/4/13;
+    z-index: 1;
 }
 .Mia1.isinview{
-  padding-top:400px;
   animation-name: TanzSchnellMitte;
   animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
 }
+.Vincent1{
+  padding-top:400px;
+  grid-area:  3/7/4/13;
+  z-index: 2;
+}
+.Vincent1.isinview{
+  animation-name: TanzSchnellMitte2;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .Mia2{
-  grid-area:  4/3/5/13;}
+  grid-area:  4/3/5/13;
+  z-index: 4;
+}
 .Mia2.isinview{
   animation-name: Tanzlangsamer;
   animation-duration: 6s;
@@ -606,8 +633,21 @@ animation-delay: 3.2s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.12,.52,.59,.64);
 }
+.Vincent2{
+  grid-area:  4/7/5/13;
+  z-index: 3;
+}
+.Vincent2.isinview{
+  animation-name: Tanzlangsamer2;
+  animation-duration: 6s;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.12,.52,.59,.64);
+}
+
 .Mia3{
   grid-area:  5/1/6/13;
+  z-index: 6;
 }
 .Mia3.isinview{
   animation-name: Tanzanstelle;
@@ -615,8 +655,20 @@ animation-delay: 3.2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+.Vincent3{
+  grid-area:  5/7/6/13;
+  z-index: 5;
+}
+.Vincent3.isinview{
+  animation-name: Tanzanstelle2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .Mia4{
   grid-area:  6/1/7/13;
+  z-index: 8;
 }
 .Mia4.isinview{
   animation-name: Tanzfokus;
@@ -624,8 +676,19 @@ animation-delay: 3.2s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.52,.11,.46,.76);
 }
+.Vincent4{
+  grid-area:  6/5/7/13;
+  z-index: 7;
+}
+.Vincent4.isinview{
+  animation-name: Tanzlangsamer2;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.12,.52,.59,.64);
+}
 .Mia5{
   grid-area: 7/4/8/13;
+  z-index: 9;
 }
 .Mia5.isinview{
   animation-name: Tanzlangsamer;
@@ -633,10 +696,23 @@ animation-delay: 3.2s;
   animation-delay: .3s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.12,.52,.59,.64);
-
 }
+.Vincent5{
+  grid-area: 7/8/8/13;
+  z-index: 10;
+}
+.Vincent5.isinview{
+  animation-name: Tanzlangsamer2;
+  animation-duration: 6s;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.12,.52,.59,.64);
+}
+
 .Mia6{
   grid-area: 8/2/9/13;
+  z-index: 12;
+  padding-top: 1%;
 }
 .Mia6.isinview{
   animation-name: Tanzanstelle;
@@ -644,8 +720,20 @@ animation-delay: 3.2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+.Vincent6{
+  grid-area: 8/8/9/13;
+  z-index: 11;
+}
+.Vincent6.isinview{
+  animation-name: Tanzanstelle2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .Mia7{
+  padding-top: 8%;
   grid-area:9/1/10/13;
+  z-index: 13;
 }
 .Mia7.isinview{
   animation-name: Tanzanstelle;
@@ -653,12 +741,33 @@ animation-delay: 3.2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+.Vincent7{
+  grid-area:9/3/10/13;
+  z-index: 14;
+}
+.Vincent7.isinview{
+  animation-name: Tanzfokus2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.52,.11,.46,.76);
+}
 .Mia8{
   grid-area:10/4/11/13;
+  z-index: 16;
+  padding-top: 7%;
 }
 .Mia8.isinview{
-  grid-area:10/4/11/13;
   animation-name: TanzSchnellMitte;
+  animation-duration: 11s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
+}
+.Vincent8{
+  grid-area:10/7/11/13;
+  z-index: 15;
+}
+.Vincent8.isinview{
+  animation-name: TanzSchnellMitte2;
   animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
@@ -676,6 +785,20 @@ animation-delay: 3.2s;
   71%{ transform: translateX(40vw);}
   80%{ transform: translateX(20vw);}
 }
+@keyframes TanzSchnellMitte2 {
+  15%{ transform: translateX(30vw);}
+  22%{ transform: translateX(25vw);}
+  29%{transform: translateX(35vw);}
+  36%{ transform: translateX(25vw);}
+  43%{transform: translateX(35vw);}
+  50%{ transform: translateX(15vw);}
+  57%{ transform: translateX(20vw);}
+  64%{transform: translateX(35vw);}
+  71%{ transform: translateX(15vw);}
+  80%{ transform: translateX(10vw);}
+  90%{ transform: translateX(-10vw);}
+  100%{ transform: translateX(-20vw);}
+}
 @keyframes Tanzlangsamer {
   20%{transform: translateX(-5vw);}
   30%{transform: translateX(30vw);}
@@ -686,6 +809,16 @@ animation-delay: 3.2s;
   75%{transform: translateX(10vw);}
   85%{transform: translateX(20vw);}
 }
+@keyframes Tanzlangsamer2 {
+  20%{transform: translateX(-20vw);}
+  30%{transform: translateX(15vw);}
+  35%{transform: translateX(10vw);}
+  45%{transform: translateX(20vw);}
+  50%{transform: translateX(-5vw);}
+  60%{transform: translateX(5vw);}
+  75%{transform: translateX(-5vw);}
+  85%{transform: translateX(5);}
+}
 @keyframes Tanzanstelle {
   10%{transform: translateX(10vw);}
   25%{ transform: translateX(2vw);}
@@ -694,6 +827,16 @@ animation-delay: 3.2s;
   70%{transform: translateX(20vw);}
   85%{transform: translateX(10vw);}
   100%{transform: translateX(5vw);}
+}
+@keyframes Tanzanstelle2 {
+  10%{transform: translateX(-20vw);}
+  20%{transform: translateX(-15vw);}
+  35%{ transform: translateX(-25vw);}
+  50%{transform: translateX(-20vw);}
+  65%{ transform: translateX(-10vw);}
+  80%{transform: translateX(-18vw);}
+  90%{transform: translateX(-10vw);}
+  100%{transform: translateX(-15vw);}
 }
 @keyframes Tanzfokus {
   0%{transform: translateX(25vw)}
@@ -706,5 +849,16 @@ animation-delay: 3.2s;
   70%{transform: translateX(10vw)}
   80%{transform: translateX(20vw)}
   100%{transform: translateX(25vw)}
-
+}
+@keyframes Tanzfokus2 {
+  0%{transform: translateX(25vw)}
+  20%{transform: translateX(10vw)}
+  25%{transform: translateX(20vw)}
+  30%{transform: translateX(10vw)}
+  40%{transform: translateX(0vw)}
+  45%{transform: translateX(10vw)}
+  55%{transform: translateX(0vw)}
+  70%{transform: translateX(10vw)}
+  80%{transform: translateX(20vw)}
+  100%{transform: translateX(25vw)}
 }
