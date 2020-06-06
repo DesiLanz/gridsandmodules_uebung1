@@ -37,7 +37,7 @@ p{
 }
 .Mia{
   font-size: 5em;
-  line-height: 0%;
+  line-height: 50%;
   font-weight: bold;
   color: #F98D2D;
   text-shadow: 5px 4px 0px #F11818;
@@ -94,6 +94,7 @@ p{
   font-size: 2em;
   font-style: italic;
   text-align: center;
+  padding-top: 400px;
 }
 
 
@@ -231,8 +232,8 @@ p{
 
 
 .Grid12er{
-display: grid;
-min-height: 100vh;
+  display: grid;
+  min-height: 100vh;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  grid-template-rows: 3fr 2fr;
  grid-column-gap: 3%;
@@ -471,6 +472,19 @@ opacity: 0;
   align-self: center;
   z-index: 1;
 }
+.ZentriertOben.isinview{
+  animation-name: nachoben;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes nachoben {
+  0%{}
+  50% { opacity: 0.4; transform: translateY(-20%);}
+  10% { opacity: 0; transform: translateY(-50%);}
+}
 .ZentriertUnten{
   grid-area:  1/1/3/13;
   display: inline-grid;
@@ -479,6 +493,20 @@ opacity: 0;
   padding-top:0.4%;
   padding-left:0.5%;
 }
+.ZentriertUnten.isinview{
+  animation-name: nachunten;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes nachunten {
+  0%{}
+  50% { opacity: 0.4; transform: translateY(20%);}
+  10% { opacity: 0; transform: translateY(50%);}
+}
+
 .Iwant{
   display: grid;
   height: 100vh;
@@ -505,15 +533,25 @@ opacity: 0;
   100%{opacity: 1;}
 }
 
-.Rechtsuntereinander.isinview .Mia:nth-child(1){
+.Rechtsuntereinander.isinview :nth-child(1){
 animation-name: plopp;
 animation-duration: .5s;
 animation-delay: 1.8s;
 }
-.Rechtsuntereinander.isinview .Mia:nth-child(2){
+.Rechtsuntereinander.isinview :nth-child(2){
 animation-name: plopp;
 animation-duration: .5s;
 animation-delay: 2.3s;
+}
+.Rechtsuntereinander.isinview :nth-child(3){
+animation-name: plopp;
+animation-duration: .5s;
+animation-delay: 2.8s;
+}
+.Rechtsuntereinander.isinview :nth-child(4){
+animation-name: plopp;
+animation-duration: .5s;
+animation-delay: 3.2s;
 }
 
 
@@ -537,17 +575,31 @@ animation-delay: 2.3s;
   grid-area:  5/6/6/13;
 }
 
-
+.wegfahren.isinview{
+  animation-name: verschwinden;
+  animation-delay: 2.5s;
+  animation-duration: .6s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+@keyframes verschwinden {
+  0%{  }
+  100% { transform: translateX(20vw);opacity: 0;}
+}
 .Mia1{
-  grid-area:  3/2/4/13;
-  padding-top: 200px;
+    grid-area:  3/2/4/13;
+}
+.Mia1.isinview{
+  padding-top:400px;
   animation-name: TanzSchnellMitte;
   animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
 }
 .Mia2{
-  grid-area:  4/3/5/13;
+  grid-area:  4/3/5/13;}
+.Mia2.isinview{
   animation-name: Tanzlangsamer;
   animation-duration: 6s;
   animation-delay: .3s;
@@ -557,20 +609,59 @@ animation-delay: 2.3s;
 .Mia3{
   grid-area:  5/1/6/13;
 }
+.Mia3.isinview{
+  animation-name: Tanzanstelle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .Mia4{
   grid-area:  6/1/7/13;
+}
+.Mia4.isinview{
+  animation-name: Tanzfokus;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.52,.11,.46,.76);
 }
 .Mia5{
   grid-area: 7/4/8/13;
 }
+.Mia5.isinview{
+  animation-name: Tanzlangsamer;
+  animation-duration: 6s;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.12,.52,.59,.64);
+
+}
 .Mia6{
   grid-area: 8/2/9/13;
+}
+.Mia6.isinview{
+  animation-name: Tanzanstelle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .Mia7{
   grid-area:9/1/10/13;
 }
+.Mia7.isinview{
+  animation-name: Tanzanstelle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 .Mia8{
   grid-area:10/4/11/13;
+}
+.Mia8.isinview{
+  grid-area:10/4/11/13;
+  animation-name: TanzSchnellMitte;
+  animation-duration: 11s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
 }
 
 @keyframes TanzSchnellMitte {
@@ -594,4 +685,26 @@ animation-delay: 2.3s;
   60%{transform: translateX(20vw);}
   75%{transform: translateX(10vw);}
   85%{transform: translateX(20vw);}
+}
+@keyframes Tanzanstelle {
+  10%{transform: translateX(10vw);}
+  25%{ transform: translateX(2vw);}
+  40%{transform: translateX(15vw);}
+  55%{ transform: translateX(5vw);}
+  70%{transform: translateX(20vw);}
+  85%{transform: translateX(10vw);}
+  100%{transform: translateX(5vw);}
+}
+@keyframes Tanzfokus {
+  0%{transform: translateX(25vw)}
+  20%{transform: translateX(10vw)}
+  25%{transform: translateX(15vw)}
+  30%{transform: translateX(10vw)}
+  40%{transform: translateX(5vw)}
+  45%{transform: translateX(10vw)}
+  55%{transform: translateX(0vw)}
+  70%{transform: translateX(10vw)}
+  80%{transform: translateX(20vw)}
+  100%{transform: translateX(25vw)}
+
 }
