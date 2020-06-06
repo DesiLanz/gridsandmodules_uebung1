@@ -12,7 +12,7 @@ h1{
 }
 .Gross{
   font-size: 34em;
-  line-height: 10%;
+  line-height: 0%;
 }
 
 h2{
@@ -37,10 +37,17 @@ p{
 }
 .Mia{
   font-size: 5em;
+  line-height: 0%;
   font-weight: bold;
   color: #F98D2D;
   text-shadow: 5px 4px 0px #F11818;
   }
+  .Miahoch{
+    font-size: 5em;
+    font-weight: bold;
+    color: #F98D2D;
+    text-shadow: 5px 4px 0px #F11818;
+    }
 
 .MiaKlein{
   font-size: 3em;
@@ -48,6 +55,7 @@ p{
   color: #F98D2D;
   text-shadow: 5px 4px 0px #F11818;
   }
+
   .Vincent{
     font-size: 5em;
     font-weight: bold;
@@ -87,7 +95,12 @@ p{
   font-style: italic;
   text-align: center;
 }
+
+
+
+
 /* Boxen */
+
 .Space{
   width: 100vw;
   height: 400px;
@@ -216,6 +229,29 @@ p{
   grid-template-rows: 1fr;
 }
 
+
+.Grid12er{
+display: grid;
+min-height: 100vh;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: 3fr 2fr;
+ grid-column-gap: 3%;
+}
+.Grid12er2{
+display: grid;
+min-height: 100vh;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: 15vh 2fr 1fr;
+ grid-column-gap: 3%;
+}
+
+.einfacher12er{
+display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: auto;
+ grid-column-gap: 3%;
+}
+
 .clap{
   grid-area: 1/1/2/3;
 }
@@ -249,27 +285,6 @@ p{
 
 }
 
-.Grid12er{
-display: grid;
-min-height: 100vh;
- grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
- grid-template-rows: 3fr 2fr;
- grid-column-gap: 3%;
-}
-.Grid12er2{
-display: grid;
-min-height: 100vh;
- grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
- grid-template-rows: 15vh 2fr 1fr;
- grid-column-gap: 3%;
-}
-
-.einfacher12er{
-display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
- grid-template-rows: auto;
- grid-column-gap: 3%;
-}
 
 .a3{
   grid-area: 1/3/2/11;
@@ -464,17 +479,43 @@ opacity: 0;
   padding-top:0.4%;
   padding-left:0.5%;
 }
+.Iwant{
+  display: grid;
+  height: 100vh;
+ grid-template-columns: 1fr 4fr 7fr ;
+ grid-template-rows: 1fr 1fr 1fr 1fr;
+ grid-auto-flow: row;
+ grid-column-gap: 6%;
+}
 .Ich{
-  grid-area:  2/2/3/5;
-  justify-self: center;
-  align-self: start;
+  grid-column:  1/3;
+  grid-row:1/5;
+  justify-self: right;
+  z-index: 1;
 }
-.Want{
-  grid-area:  2/5/3/12;
+.Ich.isinview{
+  animation-name: first;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
-.danceGood{
-  grid-area:  3/5/4/12;
+@keyframes first {
+  0%{opacity: 0;}
+  50%{opacity: 1; transform: scale(1.5);}
+  100%{opacity: 1;}
 }
+
+.Rechtsuntereinander.isinview .Mia:nth-child(1){
+animation-name: plopp;
+animation-duration: .5s;
+animation-delay: 1.8s;
+}
+.Rechtsuntereinander.isinview .Mia:nth-child(2){
+animation-name: plopp;
+animation-duration: .5s;
+animation-delay: 2.3s;
+}
+
 
 .a{
   grid-area:  1/2/2/9;
@@ -494,4 +535,63 @@ opacity: 0;
 }
 .e{
   grid-area:  5/6/6/13;
+}
+
+
+.Mia1{
+  grid-area:  3/2/4/13;
+  padding-top: 200px;
+  animation-name: TanzSchnellMitte;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.95,1.29,.75,.39);
+}
+.Mia2{
+  grid-area:  4/3/5/13;
+  animation-name: Tanzlangsamer;
+  animation-duration: 6s;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.12,.52,.59,.64);
+}
+.Mia3{
+  grid-area:  5/1/6/13;
+}
+.Mia4{
+  grid-area:  6/1/7/13;
+}
+.Mia5{
+  grid-area: 7/4/8/13;
+}
+.Mia6{
+  grid-area: 8/2/9/13;
+}
+.Mia7{
+  grid-area:9/1/10/13;
+}
+.Mia8{
+  grid-area:10/4/11/13;
+}
+
+@keyframes TanzSchnellMitte {
+  15%{ transform: translateX(50vw);}
+  22%{ transform: translateX(40vw);}
+  29%{transform: translateX(55vw);}
+  36%{ transform: translateX(40vw);}
+  43%{transform: translateX(60vw);}
+  50%{ transform: translateX(30vw);}
+  57%{ transform: translateX(40vw);}
+  64%{transform: translateX(55vw);}
+  71%{ transform: translateX(40vw);}
+  80%{ transform: translateX(20vw);}
+}
+@keyframes Tanzlangsamer {
+  20%{transform: translateX(-5vw);}
+  30%{transform: translateX(30vw);}
+  35%{transform: translateX(25vw);}
+  45%{transform: translateX(35vw);}
+  50%{transform: translateX(15vw);}
+  60%{transform: translateX(20vw);}
+  75%{transform: translateX(10vw);}
+  85%{transform: translateX(20vw);}
 }
