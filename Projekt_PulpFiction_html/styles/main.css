@@ -96,6 +96,13 @@ p{
   padding-top: 400px;
 }
 
+.Quellen{
+  font-size: 1em;
+  text-align: left;
+  letter-spacing: 0.8;
+  line-height: 1.4em;
+  margin: 8;
+}
 
 
 
@@ -861,4 +868,17 @@ opacity: 0;
   70%{transform: translateX(10vw)}
   80%{transform: translateX(20vw)}
   100%{transform: translateX(25vw)}
+}
+
+.Video{
+  grid-area: 1/2/2/7;
+  justify-self: center;
+  padding-bottom: 200px;
+
+}
+
+.impressum{
+  grid-area: 1/7/2/12;
+  padding-top: 92;
+
 }
