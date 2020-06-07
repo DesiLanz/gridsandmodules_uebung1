@@ -442,8 +442,8 @@ display: grid;
 }
 .untenLinks.isinview{
   animation-name: aufblasen;
-  animation-delay: 5s;
-  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-duration: 1s;
   animation-fill-mode: both;
   animation-direction: normal;
   animation-timing-function: linear;
@@ -464,52 +464,10 @@ display: grid;
   align-self: center;
 }
 .Zentriert.isinview{
-transition: all 2.5s ease;
-transition-delay: 2s;
-transform: scale(12);
-opacity: 0;
-}
-
-.ZentriertOben{
-  grid-area:  1/1/3/13;
-  display: inline-grid;
-  justify-self: center;
-  align-self: center;
-  z-index: 1;
-}
-.ZentriertOben.isinview{
-  animation-name: nachoben;
-  animation-duration: 10s;
-  animation-delay: 2s;
-  animation-fill-mode: both;
-  animation-direction: normal;
-  animation-timing-function: linear;
-}
-@keyframes nachoben {
-  0%{}
-  50% { opacity: 0.4; transform: translateY(-20%);}
-  10% { opacity: 0; transform: translateY(-50%);}
-}
-.ZentriertUnten{
-  grid-area:  1/1/3/13;
-  display: inline-grid;
-  justify-self: center;
-  align-self: center;
-  padding-top:0.4%;
-  padding-left:0.5%;
-}
-.ZentriertUnten.isinview{
-  animation-name: nachunten;
-  animation-duration: 10s;
-  animation-delay: 2s;
-  animation-fill-mode: both;
-  animation-direction: normal;
-  animation-timing-function: linear;
-}
-@keyframes nachunten {
-  0%{}
-  50% { opacity: 0.4; transform: translateY(20%);}
-  10% { opacity: 0; transform: translateY(50%);}
+  transition: all 2.5s ease;
+  transition-delay: 2s;
+  transform: scale(12);
+  opacity: 0;
 }
 
 .Iwant{
@@ -528,11 +486,11 @@ opacity: 0;
 }
 .Ich.isinview{
   animation-name: first;
-  animation-duration: 2s;
-  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
 }
 @keyframes first {
   0%{opacity: 0;}
@@ -543,15 +501,15 @@ opacity: 0;
 .Rechtsuntereinander.isinview :nth-child(1){
   opacity: 0;
   animation-name: plopp;
-  animation-duration: 2s;
-    animation-delay: 2s;
+  animation-duration: .5s;
+    animation-delay: 3s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
 .Rechtsuntereinander.isinview :nth-child(2){
   opacity: 0;
   animation-name: plopp;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-delay: 4s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
@@ -559,8 +517,8 @@ opacity: 0;
 .Rechtsuntereinander.isinview :nth-child(3){
   opacity: 0;
   animation-name: plopp;
-  animation-duration: 1s;
-  animation-delay: 6s;
+  animation-duration: .5s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -568,9 +526,53 @@ opacity: 0;
   opacity: 0;
   animation-name: plopp;
   animation-duration: .2s;
-  animation-delay:7s;
+  animation-delay:6s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
+}
+
+.ZentriertOben{
+  grid-area:  1/1/3/13;
+  display: inline-grid;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+.ZentriertOben.isinview{
+  animation-name: nachoben;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+@keyframes nachoben {
+  0%{}
+  50% { opacity: 0.4; transform: translateY(-20%);}
+  100% { opacity: 0; transform: translateY(-50%);}
+}
+.ZentriertUnten{
+  grid-area:  1/1/3/13;
+  display: inline-grid;
+  justify-self: center;
+  align-self: center;
+  padding-top:0.4%;
+  padding-left:0.5%;
+}
+.ZentriertUnten.isinview{
+  animation-name: nachunten;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+@keyframes nachunten {
+  0%{}
+  50% { opacity: 0.4; transform: translateY(20%);}
+  100% { opacity: 0; transform: translateY(50%);}
 }
 
 
@@ -582,28 +584,59 @@ opacity: 0;
   grid-area:  2/9/3/13;
   writing-mode: sideways-lr;
 }
+.b.isinview{
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
 .c{
   grid-area:  3/2/4/9;
+}
+.c.isinview{
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 .d{
   grid-area:  4/2/5/6;
   writing-mode: sideways-lr;
   margin-top: 40%;
 }
+.d.isinview{
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
 .e{
   grid-area:  5/6/6/13;
 }
-
+.e.isinview{
+  opacity: 0;
+  animation-name: plopp;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
 .wegfahren.isinview{
   animation-name: verschwinden;
-  animation-delay: 2.5s;
-  animation-duration: .6s;
+  animation-delay:4s;
+  animation-duration: 1s;
   animation-fill-mode: both;
   animation-direction: normal;
   animation-timing-function: linear;
 }
 @keyframes verschwinden {
-  0%{  }
+  0%{ opacity: 1;}
   100% { transform: translateX(20vw);opacity: 0;}
 }
 .Mia1{
