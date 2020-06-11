@@ -989,10 +989,7 @@ display: grid;
   100%{transform: translateX(25vw)}
 }
 
-.kino{
-  grid-area: 1/1/2/13;
-  z-index: 1;
-}
+
 .Video{
   grid-area: 1/2/2/7;
   justify-self: center;
