@@ -93,8 +93,8 @@ p{
 .smoking.isinview{
   opacity: 0;
   animation-name: Rauch;
-  animation-duration: 7s;
-  animation-delay: 2s;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
   animation-timing-function: linear;
 }
 @keyframes Rauch {
@@ -265,6 +265,8 @@ p{
 .Grid12er{
   display: grid;
   min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  grid-template-rows: 3fr 2fr;
  grid-column-gap: 3%;
@@ -279,6 +281,8 @@ min-height: 100vh;
 
 .einfacher12er{
 display: grid;
+min-width: 100vw;
+overflow-x: hidden;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  grid-template-rows: auto;
  grid-column-gap: 3%;
@@ -385,7 +389,7 @@ display: grid;
 .b3.isinview{
   opacity: 0;
   animation-name: einblenden;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-direction: normal;
